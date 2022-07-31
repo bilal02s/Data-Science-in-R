@@ -15,12 +15,12 @@ all the data used are open source and free to use.
     1. does the height mesurement of males and females follow a certain distribution?
     2. how to prove the answer of the preceding question?
 
-3. ### Life expectency vs fertility rate 
-    1. myth : the world is divided into two groups, the Western World, composed of western europe and north america, which is characterized by long lifespans and small families versus the developing world, Africa, Asia, and Latin America, characterized by short lifespans and large families.
+3. ### Life expectency vs fertility rate </br>
+    Myth : the world is divided into two groups, the Western World, composed of western europe and north america, which is characterized by long lifespans and small families versus the developing world, Africa, Asia, and Latin America, characterized by short lifespans and large families.
 
 4. ### Rich countries vs poor countries </br>
-    myth : poor countries have become poorer and rich countries have become richer. </br>
-    in order to check the validity of the previous statement, we will proceed by processing the gdp of countries to answer several intermediate questions. (gdp numbers are adjusted across the years for inflation)
+    Myth : poor countries have become poorer and rich countries have become richer. </br>
+    In order to check the validity of the previous statement, we will proceed by processing the gdp of countries to answer several intermediate questions. (gdp numbers are adjusted across the years for inflation)
     1. what is the average income distribution across countries in 1970?
     2. what countries were considered rich? and what countries were considered poor?
     3. how has the average income varied across time?
