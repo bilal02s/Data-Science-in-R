@@ -1,4 +1,7 @@
 library(dslabs)
+library(dplyr)
+library(stringr)
+
 data(reported_heights)
 reported_heights
 
@@ -53,7 +56,7 @@ new_heights = reported_heights %>%
 
 colnames(new_heights)[2] = "height"
   
-save(new_heights, file = "createdData/heights.rda")
+save(new_heights, file = "../Data/heights.rda")
 
 
 
