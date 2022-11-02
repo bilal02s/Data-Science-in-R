@@ -76,3 +76,65 @@ set.seed(1, sample.kind = "Rounding")
 QDA_model = caret::train(Survived~Fare, data = train_set, method = "qda")
 QDA_predictions = predict(QDA_model, test_set)
 accuracy_QDA = mean(QDA_predictions == test_set$Survived)
+
+# calculating accuracy using the logistic regression method 
+# using age as the only predictor
+set.seed(1, sample.kind = "Rounding")
+GLM_model1 = caret::train(Survived~Age, data = train_set, method = "glm")
+GLM_predictions1 = predict(GLM_model1, test_set)
+accuracy1_GLM = mean(GLM_predictions1 == test_set$Survived)
+
+# using sex, class, fare and age as predictors
+set.seed(1, sample.kind = "Rounding")
+GLM_model2 = caret::train(Survived ~ Sex+Pclass+Fare+Age, data = train_set, method = "glm")
+GLM_predictions2 = predict(GLM_model2, test_set)
+accuracy2_GLM = mean(GLM_predictions2 == test_set$Survived)
+
+# with all predictors
+set.seed(1, sample.kind = "Rounding")
+GLM_model3 = caret::train(Survived~., data = train_set, method = "glm")
+GLM_predictions3 = predict(GLM_model3, test_set)
+accuracy3_GLM = mean(GLM_predictions3 == test_set$Survived)
+
+# training a knn model, finding the optimal k value
+set.seed(6, sample.kind = "Rounding")
+knn_model = caret::train(Survived~., data = train_set, method = "knn", tuneGrid = data.frame(k = seq(3, 51, 2)))
+best_value_knn = knn_model$bestTune
+
+# plotting the variation of accuracy with respect to k (the number of neighbours)
+ggplot(knn_model)
+
+# accuracy of the knn model
+knn_predictions = predict(knn_model, test_set)
+accuracy_knn = mean(knn_predictions == test_set$Survived)
+
+# training a knn model using 10 fold cross validation
+set.seed(8, sample.kind = "Rounding")
+control = trainControl(method = "cv", number = 10, p = .9)
+knn_model2 = caret::train(Survived~., data = train_set, method = "knn", 
+                          tuneGrid = data.frame(k = seq(3, 51, 2)),
+                          trControl = control)
+best_value2_knn = knn_model2$bestTune
+knn_predictions2 = predict(knn_model2, test_set)
+accuracy2_knn = mean(knn_predictions2 == test_set$Survived)
+
+# training a decision tree model
+set.seed(10, sample.kind = "Rounding")
+rpart_model = caret::train(Survived~., data = train_set, method = "rpart", 
+                          tuneGrid = data.frame(cp = seq(0, 0.05, 0.002)))
+best_value_rpart = rpart_model$bestTune
+rpart_predictions = predict(rpart_model, test_set)
+accuracy_rpart = mean(rpart_predictions == test_set$Survived)
+plot(rpart_model$finalModel, margin = 0.1)
+text(rpart_model$finalModel, cex = 0.5)
+
+# training a random forest model
+set.seed(14, sample.kind = "Rounding")
+rf_model = caret::train(Survived~., data = train_set, method = "rf",
+                        tuneGrid = data.frame(mtry = seq(1:7)),
+                        ntree = 100)
+best_value_rf = rf_model$bestTune
+rf_predictions = predict(rf_model, test_set)
+accuracy_rf = mean(rf_predictions == test_set$Survived)
+imp = varImp(rf_model)
+sortImp(imp, 1)
