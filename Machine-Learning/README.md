@@ -1,11 +1,18 @@
 # Machine Learning
 
 ## Table of Contents
+1. [Introduction](#introduction)
+2. [Certificate](#certificate)
+3. [Sections](#sections)
+    * [Titanic Survival Predictions](#titanic-survival-predictions)
+    * [Mnist hand written digits recognition](#mnist-hand-written-digits-recognition)
+    * [Recommendation System](#recommendation-system)
+4. [How to Run](#how-to-run)
 
 ## Introduction
 In this section, we have used machine learning to solve several tasks that required predictions.
 
-## Certificates
+## Certificate
 1. [PH125.8x: Data Science: Machine Learning](https://courses.edx.org/certificates/7329dcdd665b42adaf2b779b6e3ee7a3)
 
 ## Sections
