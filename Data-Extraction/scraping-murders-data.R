@@ -1,6 +1,4 @@
 library(dplyr)
-library(stringr)
-library(tidyr)
 library(readr)
 library(rvest)
 
@@ -26,4 +24,4 @@ murders = data.frame(state = murders$state,
                      popolation = murders$population,
                      murder = murders$murder)
 
-save(murders, file = "../Data/murders.rda")
+save(murders, file = "./murders.rda")

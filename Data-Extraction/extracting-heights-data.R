@@ -1,9 +1,9 @@
 library(dslabs)
 library(dplyr)
 library(stringr)
+library(tidyr)
 
 data(reported_heights)
-reported_heights
 
 errors = reported_heights %>% mutate(numeric = as.numeric(height)) %>% 
   filter(is.na(numeric)) %>% .$height
@@ -56,7 +56,7 @@ new_heights = reported_heights %>%
 
 colnames(new_heights)[2] = "height"
   
-save(new_heights, file = "../Data/heights.rda")
+save(new_heights, file = "./heights.rda")
 
 
 
