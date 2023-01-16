@@ -6,7 +6,7 @@
 In this section, we have used machine learning to solve several tasks that required predictions.
 
 ## Certificates
-2. [PH125.8x: Data Science: Machine Learning](https://courses.edx.org/certificates/7329dcdd665b42adaf2b779b6e3ee7a3)
+1. [PH125.8x: Data Science: Machine Learning](https://courses.edx.org/certificates/7329dcdd665b42adaf2b779b6e3ee7a3)
 
 ## Sections
 
