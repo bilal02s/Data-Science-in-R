@@ -3,6 +3,8 @@ library(ggplot2)
 library(dplyr)
 library(ggrepel)
 library(ggthemes)
+library(tidyverse)
+library(gridExtra)
 data(murders)
 
 #calculating the average murder rate
