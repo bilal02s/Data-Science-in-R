@@ -1,5 +1,5 @@
 library(dslabs)
-library(tidyverse)
+library(dplyr)
 library(caret)
 
 data(movielens)
