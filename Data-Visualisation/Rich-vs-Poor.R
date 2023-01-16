@@ -1,7 +1,6 @@
-library(tidyverse)
+library(dslabs)
 library(dplyr)
 library(ggplot2)
-library(gridExtra)
 data(gapminder)
 
 #calculating the average income distribution, which is equal to the total yearly gdp country divided by the population and 365 days
